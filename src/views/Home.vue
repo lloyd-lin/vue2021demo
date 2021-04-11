@@ -2,17 +2,26 @@
   <div class="home">
     home
     <top-view></top-view>
+    <sales-view></sales-view>
+    <bottom-view></bottom-view>
+    <map-view></map-view>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import TopView from '../components/TopView'
+import BottomView from '../components/BottomView'
+import SalesView from '../components/SalesView'
+import MapView from '../components/MapView'
 
 export default {
   name: 'Home',
   components: {
-    TopView
+    TopView,
+    BottomView,
+    SalesView,
+    MapView
   }
 }
 </script>

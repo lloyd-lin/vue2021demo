@@ -54,3 +54,54 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.prototype.$echarts = Echarts
 ```
 
+### vue router
+routes数组每个对象是一个单页，每个单页可以包含compoent或者多个components， compoents里default为默认，后续router-view使用名字来决定组件名字
+```router.js
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    components: {
+      default: Home,
+      test: Home1
+    }
+  }
+]
+```
+```App.vue
+<template>
+  <div id="app">
+    <router-view></router-view>
+    <!-- <router-view name="test"></router-view> -->
+  </div>
+</template>
+```
+
+
+### mixins
+```
+// mixin file
+import CommonCard from '../components/CommonCard'
+
+export default {
+  components: {
+    CommonCard
+  }
+}
+// use file
+export default {
+  mixins: [CommonCardMixin],
+}
+```
+
+### vue-echarts and component
+```
+// main.js  import
+import VueEcharts from 'vue-echarts'
+// regist
+Vue.component('v-chart', VueEcharts)
+```
+vue-chart运行最新版本在vue2需要安装  
+```
+cnpm i -D @vue/composition-api
+```
